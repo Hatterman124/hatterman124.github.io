@@ -111,6 +111,17 @@ th,
 td {
 	border: thin solid var(--border-secondary);
 }
+dt {
+	font-weight: bold;
+}
+dt::after {
+	content: ":";
+}
+dd {
+	margin-bottom: 1rem;
+	display: list-item;
+	list-style-type: disc;
+}
 footer {
 	height: 2.5rem;
 	background-color: var(--background-secondary);
@@ -132,8 +143,9 @@ footer {
 	padding: 0.5rem;
 	border: 0.1rem solid var(--border-primary);
 }
-.basic-box-noborder {
-	padding: 0.5rem;
+.dl-box {
+	width: 16rem;
+	margin: 0 auto 1rem auto;
 	text-align: left;
 }
 .map-image {
