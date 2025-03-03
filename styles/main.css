@@ -283,7 +283,6 @@ footer {
 	font-family: monospace;
 	color: #000000;
 	background: #ffff00;
-	filter: brightness(50%);
 }
 .box-gurren-lagann img {
 	display: block;
@@ -293,6 +292,7 @@ footer {
 	margin: 0 auto;
 	border: thick double #000000;
 	border-radius: 0.5rem;
+	filter: brightness(50%);
 }
 .box-gurren-lagann-bottom-accent {
 	margin-top: auto;
