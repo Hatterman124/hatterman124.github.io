@@ -248,6 +248,7 @@ footer {
 	margin: 0 auto;
 	border: thin solid #ff0000;
 	border-radius: 0.5rem;
+	filter: sepia(100%);
 }
 .box-fullmetal-alchemist-bottom-accent {
 	margin-top: auto;
@@ -271,6 +272,7 @@ footer {
 	margin: 0 auto;
 	border: thin solid #ffffff;
 	border-radius: 0.5rem;
+	filter: drop-shadow(0.25rem 0.25rem 0 #ffa500);
 }
 .box-gurren-lagann {
 	display: flex;
@@ -281,6 +283,7 @@ footer {
 	font-family: monospace;
 	color: #000000;
 	background: #ffff00;
+	filter: brightness(50%);
 }
 .box-gurren-lagann img {
 	display: block;
@@ -312,6 +315,7 @@ footer {
 	height: auto;
 	margin: 0 auto;
 	border: thin solid #000000;
+	filter: grayscale(100%);
 }
 .box-fullmetal-alchemist h2,
 .box-soul-eater h2,
