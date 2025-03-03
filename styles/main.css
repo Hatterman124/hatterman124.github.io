@@ -172,14 +172,15 @@ footer {
 .box-side-bar{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-	align-content: center;
 }
 .box-side-bar figcaption{
 	color: var(--text-secondary);
 }
 .box-miku-new-year {
-	margin: 0 auto;
+	max-width: 11.5rem;
+	min-width: 2rem;
 }
 .miku-new-year {
 	width: 100%;
