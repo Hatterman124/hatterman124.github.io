@@ -1,0 +1,327 @@
+/*
+@media (prefers-color-scheme: light) {
+	:root {
+		--text-primary: #1b1b1b;
+		--text-secondary: #4e4e4e;
+		--text-link: #0069c2;
+		--text-visited: #551a8b;
+		--background-primary: #ffffff;
+		--background-secondary: #f9f9fb;
+		--background-tertiary: #ebeaea;
+		--border-primary: #cdcdcd;
+		--border-secondary: #cdcdcd;
+		--critical: #d30038;
+		--accent-primary: #0085f2;
+		--scrollbar-bg: #00000000;
+		--scrollbar-color: #00000040;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-primary: #ffffff;
+		--text-secondary: #cdcdcd;
+		--text-link: #8cb4ff;
+		--text-visited: #ffadff;
+		--background-primary: #1b1b1b;
+		--background-secondary: #313131;
+		--background-tertiary: #858585;
+		--border-primary: #858585;
+		--border-secondary: #696969;
+		--critical: #d30038;
+		--accent-primary: #5e9eff;
+		--scrollbar-bg: #00000000;
+		--scrollbar-color: #ffffff40;
+	}
+}
+*/
+
+ /*
+ /  Light Mode looks terrible.
+ /  Forcing Dark Mode
+*/
+
+:root {
+	--text-primary: #ffffff;
+	--text-secondary: #cdcdcd;
+	--text-link: #8cb4ff;
+	--text-visited: #ffadff;
+	--background-primary: #1b1b1b;
+	--background-secondary: #313131;
+	--background-tertiary: #858585;
+	--border-primary: #858585;
+	--border-secondary: #696969;
+	--critical: #d30038;
+	--accent-primary: #5e9eff;
+	--scrollbar-bg: #00000000;
+	--scrollbar-color: #ffffff40;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding:0;
+	min-height: 100vh;
+	color: var(--text-primary);
+	background-color: var(--background-primary);
+	accent-color: var(--accent-primary);
+	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg);
+	cursor: url("/images/images/miku1.cur"), auto;
+}
+header {
+	background-color: var(--background-primary);
+	border-bottom: 1px solid var(--border-primary);
+}
+main {
+	display: flex;
+	justify-content: center;
+	flex-grow: 1;
+	background-image: linear-gradient(#00ffff80, #ff00ffbf), url("/images/background.gif");
+}
+figcaption{
+	text-align: center;
+}
+a:link {
+	color: var(--text-link);
+}
+a:visited {
+	color: var(--text-visited);
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	color: #ffffff;
+	background-color: var(--text-link);
+	text-decoration: none;
+}
+footer {
+	background-color: var(--background-secondary);
+	padding-left: 2rem;
+}
+.box-battertech-logo {
+	display: inline-block;
+	margin-left: 2rem;
+	padding: 1rem 1rem 1rem 0.5rem;
+	background-color: #000000;
+	border-right: 1px solid var(--border-primary);
+	border-left: 1px solid var(--border-primary);
+}
+.battertech-logo {
+	width: 7rem;
+	height: 1rem;
+}
+.box-main-content {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 1rem 4rem;
+	gap: 1rem;
+	background-color: var(--background-primary);
+	border-right: 1px solid var(--border-primary);
+	border-left: 1px solid var(--border-primary);
+}
+.box-introduction {
+	display: grid;
+	grid-template-columns: 5fr 4fr;
+	grid-auto-rows: min-content;
+	column-gap: 1rem;
+	margin: 0 auto;
+}
+.box-introduction strong {
+	font-size: 1.5rem;
+}
+.title-main {
+	display: flex;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	justify-content: center;
+	align-content: center;
+}
+.image-profile-picture {
+	width: 100%;
+	max-width: 8rem;
+	min-width: 2rem;
+	height: auto;
+	margin: auto 1rem auto 0;
+	border: thin solid var(--border-primary);
+	border-radius: 0.5rem;
+}
+.box-introduction-text {
+	max-width: 32rem;
+}
+.paragraph-indent {
+	text-indent: 4rem;
+}
+.text-last-update {
+	margin-left: 1rem;
+	font-size: 0.75rem;
+	color: var(--text-secondary);
+}
+.text-last-update time {
+	font-size: 1rem;
+}
+.text-center{
+	text-align: center;
+}
+.box-side-bar{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.box-side-bar figcaption{
+	color: var(--text-secondary);
+}
+.box-miku-new-year {
+	margin: 0 auto;
+}
+.miku-new-year {
+	width: 100%;
+	max-width: 11.5rem;
+	min-width: 2rem;
+	height: auto;
+	border: thin solid var(--border-primary);
+	border-radius: 0.5rem;
+}
+.box-music {
+	width: fit-content;
+	margin: 0 auto;
+	padding: 0 1rem;
+	border: thin solid var(--border-primary);
+	border-radius: 1rem;
+	text-align: center;
+	background-image: linear-gradient(#000000, #ff00ff);
+}
+.box-music figure{
+	margin: 1rem 0 0;
+}
+.box-music figcaption{
+	margin-bottom: 0.5rem;
+	color: #00bfff;
+}
+.box-music audio {
+	width: 100%;
+	max-width: 18rem;
+	height: auto;
+}
+.box-music h2 {
+	font-size: 1rem;
+}
+.box-music p {
+	color: #0000ff;
+}
+.image-music {
+	width: 100%;
+	max-width: 15rem;
+	height: auto;
+	margin: 0 auto;
+	border: thin solid var(--border-primary);
+	border-radius: 0.5rem;
+}
+.box-main-articles {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+	grid-auto-rows: 1fr;
+	gap: 1rem;
+}
+.box-fullmetal-alchemist {
+	display: flex;
+	flex-direction: column;
+	max-width: 64rem;
+	border: thick solid #ff0000;
+	border-radius: 1rem;
+	color: #ff0000;
+	background: #ffffff;
+}
+.box-fullmetal-alchemist img {
+	display: block;
+	width: 100%;
+	max-width: 16rem;
+	height: auto;
+	margin: 0 auto;
+	border: thin solid #ff0000;
+	border-radius: 0.5rem;
+}
+.box-fullmetal-alchemist-bottom-accent {
+	margin-top: auto;
+	border-bottom: 2rem solid #ff0000;
+	border-left: 3rem solid transparent;
+	width: auto;
+	height: 0;
+}
+.box-soul-eater {
+	max-width: 64rem;
+	border: thick solid #ffffff;
+	border-radius: 1rem;
+	color: #ffa500;
+	background: #8f0808;
+}
+.box-soul-eater img {
+	display: block;
+	width: 100%;
+	max-width: 16rem;
+	height: auto;
+	margin: 0 auto;
+	border: thin solid #ffffff;
+	border-radius: 0.5rem;
+}
+.box-gurren-lagann {
+	display: flex;
+	flex-direction: column;
+	max-width: 64rem;
+	border: thick double #000000;
+	border-radius: 1rem;
+	font-family: monospace;
+	color: #000000;
+	background: #ffff00;
+}
+.box-gurren-lagann img {
+	display: block;
+	width: 100%;
+	max-width: 16rem;
+	height: auto;
+	margin: 0 auto;
+	border: thick double #000000;
+	border-radius: 0.5rem;
+}
+.box-gurren-lagann-bottom-accent {
+	margin-top: auto;
+	margin-bottom: 2rem;
+	width: auto;
+	height: 1rem;
+	border-top: 0.5rem solid #000000;
+	border-bottom: 0.5rem solid #000000;
+}
+.box-welcome-to-the-nhk {
+	max-width: 64rem;
+	border: thick double #000000;
+	color: #000000;
+	background: #d3d3d3;
+}
+.box-welcome-to-the-nhk img {
+	display: block;
+	width: 100%;
+	max-width: 16rem;
+	height: auto;
+	margin: 0 auto;
+	border: thin solid #000000;
+}
+.box-fullmetal-alchemist h2,
+.box-soul-eater h2,
+.box-gurren-lagann h2,
+.box-welcome-to-the-nhk h2 {
+	margin: 0 1rem;
+	text-align: center;
+}
+.box-fullmetal-alchemist p,
+.box-soul-eater p,
+.box-gurren-lagann p,
+.box-welcome-to-the-nhk p {
+	margin: 0 1rem 1rem;
+}
