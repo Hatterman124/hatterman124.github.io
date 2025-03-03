@@ -69,7 +69,7 @@ body {
 	background-color: var(--background-primary);
 	accent-color: var(--accent-primary);
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg);
-	cursor: url("/images/images/miku1.cur"), auto;
+	cursor: url("/images/miku1.cur"), auto;
 }
 header {
 	background-color: var(--background-primary);
