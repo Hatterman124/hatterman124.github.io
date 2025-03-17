@@ -233,7 +233,7 @@ footer {
 	height: 2rem;
 	margin-top: auto;
 	margin-bottom: auto;
-	image-rendering: crisp-edges;
+	image-rendering: pixelated;
 }
 .box-main-content {
 	margin: 0 auto;
