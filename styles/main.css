@@ -249,6 +249,7 @@ footer {
 	height: 45rem;
 	width: auto;
 	filter: opacity(25%);
+	pointer-events: none;
 	animation: 3s ease-out 1s 1 normal forwards running miku-lino-slide;
 }
 @keyframes miku-lino-slide {
@@ -266,6 +267,7 @@ footer {
 	height: 30rem;
 	width: auto;
 	filter: opacity(25%);
+	pointer-events: none;
 	animation: 3s ease-out 1s 1 normal forwards running marin-slide;
 }
 @keyframes marin-slide {
