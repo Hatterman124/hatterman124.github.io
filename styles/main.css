@@ -1,4 +1,8 @@
 /*
+ * I need to read these two:
+ * https://getbem.com/introduction/
+ * https://smacss.com/
+ * 
  * Use this to order CSS properties.
  * (Taken and edited from https://github.com/necolas/idiomatic-css)
  *
@@ -33,6 +37,9 @@
  * 	animation: 3s ease-out 1s 1 normal forwards running slide;
  * }
  */
+
+/* || Global Variables */
+
 :root {
 	--max-width: 1440px;
 }
@@ -103,6 +110,8 @@
 	}
 }
 
+/* || Global Variables | JavaScript Switching Color Scheme*/
+
 .light {
 	--color: #ffffff;
 	--color-inverse: #000000;
@@ -165,6 +174,8 @@
 		content: url("../images/battertech-logo-dark.gif");
 }
 
+/* || HTML and body */
+
 html {
 	scroll-behavior: smooth;
 }
@@ -172,6 +183,7 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	overflow-x: hidden;
 	min-height: 100vh;
 	padding:0;
 	margin: 0;
@@ -181,9 +193,11 @@ body {
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg);
 }
 
+/* || Header and Main Navigation */
+
 header {
 	flex: 0 1;
-	border-bottom: 1px solid var(--border-primary);
+	border-bottom: thin solid var(--border-primary);
 	background-color: var(--background-primary);
 }
 
@@ -213,6 +227,8 @@ nav a:hover {
 	background-color: var(--text-link-bg);
 	color: var(--text-link);
 }
+
+/* || Main and Footer */
 
 main {
 	position: relative;
@@ -266,8 +282,8 @@ footer {
 	align-items: center;
 	padding-right: 1rem;
 	padding-left: 0.5rem;
-	border-right: 1px solid var(--border-primary);
-	border-left: 1px solid var(--border-primary);
+	border-right: thin solid var(--border-primary);
+	border-left: thin solid var(--border-primary);
 	background-color: var(--color);
 }
 
@@ -283,7 +299,7 @@ footer {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0.5rem;
-	border: 1px solid var(--border-primary);
+	border: thin solid var(--border-primary);
 	border-radius: 0.5rem;
 }
 
@@ -317,7 +333,7 @@ footer {
 }
 
 .box-file-path {
-	border-top: 1px solid var(--border-primary);
+	border-top: thin solid var(--border-primary);
 }
 
 .box-file-path p {
@@ -345,20 +361,23 @@ footer {
 	position: absolute;
 	z-index: -1;
 	bottom: 0;
-	left: -22.5rem;
-	width: auto;
+	left: 0;
+	width: 22.5rem;
 	height: 45rem;
 	filter: opacity(25%);
 	pointer-events: none;
-	animation: 3s ease-out 1s 1 normal forwards running miku-lino-slide;
+	animation: 4s ease-out 0s 1 normal forwards running miku-lino-slide;
 }
 
 @keyframes miku-lino-slide {
-	from {
-		translate: 0 0;
+	0% {
+		translate: -22.5rem 0;
 	}
-	to {
-		translate: 22.5rem 0;
+	25% {
+		translate: -22.5rem 0;
+	}
+	100% {
+		translate: 0 0;
 	}
 }
 
@@ -366,26 +385,71 @@ footer {
 	position: absolute;
 	z-index: -1;
 	bottom: 0;
-	left: -26rem;
-	width: auto;
+	left: 0;
+	width: 26rem;
 	height: 30rem;
 	filter: opacity(25%);
 	pointer-events: none;
-	animation: 3s ease-out 1s 1 normal forwards running marin-slide;
+	animation: 4s ease-out 0s 1 normal forwards running marin-slide;
 }
 
 @keyframes marin-slide {
-	from {
+	0% {
+		translate: -26rem 0;
+	}
+	25% {
+		translate: -26rem 0;
+	}
+	100% {
 		translate: 0 0;
 	}
-	to {
-		translate: 26rem 0;
+}
+
+.image-sagiri {
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	left: 0;
+	width: 26rem;
+	height: 32rem;
+	filter: opacity(25%);
+	pointer-events: none;
+	animation: 4s ease-out 0s 1 normal forwards running sagiri-slide;
+}
+
+@keyframes sagiri-slide {
+	0% {
+		translate: -26rem 0;
+	}
+	25% {
+		translate: -26rem 0;
+	}
+	100% {
+		translate: 0 0;
 	}
 }
 
 .box-main-content {
 	max-width: min(80vw + 4rem, var(--max-width));
 	margin: 0 auto;
+}
+
+.box-main-content-flexbox {
+	display: flex;
+	gap: 1rem;
+}
+
+.box-weeaboo {
+	display: block;
+	border: thin solid var(--border-primary);
+	margin: 0 auto;
+	background-color:  var(--background-secondary);
+	text-align: center;
+}
+
+.box-weeaboo img {
+	width: auto;
+	height: 32rem;
 }
 
 .box-main-content-assignment-4 {
@@ -396,9 +460,9 @@ footer {
 
 .box-side-nav-bar {
 	height: 100%;
-	border-right: 1px solid var(--border-primary);
-	border-bottom: 1px solid var(--border-primary);
-	border-left: 1px solid var(--border-primary);
+	border-right: thin solid var(--border-primary);
+	border-bottom: thin solid var(--border-primary);
+	border-left: thin solid var(--border-primary);
 }
 
 @media(max-width: 52rem) {
@@ -433,14 +497,15 @@ footer {
 	max-width: 32rem;
 	width: 100%;
 	height: auto;
-	margin: 0 auto;
+	margin: 0 1rem;
 }
 
 .box-grid {
 	display: flex;
 	flex-direction: column;
 	max-width: 64rem;
-	border: 1px solid var(--border-primary);
+	padding: 1rem;
+	border: thin solid var(--border-primary);
 	border-radius: 1rem;
 	background-color: var(--background-secondary);
 	text-align: center;
@@ -451,10 +516,53 @@ footer {
 	aspect-ratio: 1 / 1;
 	width: auto;
 	max-height: 48rem;
-	border: 1px solid var(--border-primary);
-	border-radius: 1rem;
-	margin: 0 auto;
-	background: var(--background-secondary) url("../images/clockimg.png") center/contain no-repeat;
+	border: thick solid #00ff00;
+	border-radius: 50%;
+	margin: 0 auto 1rem auto;
+	background: #ff00ff url("../images/clockimg.png") center/contain no-repeat;
+	animation: 2s cubic-bezier(0.57, 0.4, 0.55, 1.17) 0s 1 normal forwards running clock-slide, 12s linear 0s infinite normal backwards running clock-background-rainbow;
+}
+
+@keyframes clock-slide {
+	0% {
+		opacity: 0;
+		translate: 48rem 0;
+	}
+	100% {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+@keyframes clock-background-rainbow {
+	0% {
+		border-color: #ff00ff;
+		background-color: #ff00ff;
+	}
+	16.67% {
+		border-color: #ff0000;
+		background-color: #ff0000;
+	}
+	33.33% {
+		border-color: #ffff00;
+		background-color: #ffff00;
+	}
+	50% {
+		border-color: #00ff00;
+		background-color: #00ff00;
+	}
+	66.67% {
+		border-color: #00ffff;
+		background-color: #00ffff;
+	}
+	83.33% {
+		border-color: #0000ff;
+		background-color: #0000ff;
+	}
+	100% {
+		border-color: #ff00ff;
+		background-color: #ff00ff;
+	}
 }
 
 .image-clock-hour-hand {
@@ -465,6 +573,7 @@ footer {
 	width: auto;
 	height: 50%;
 	margin: 0 auto;
+	pointer-events: none;
 	animation: 17280s linear 0s infinite normal backwards running clock-hour-hand;
 }
 
@@ -487,6 +596,7 @@ footer {
 	width: auto;
 	height: 50%;
 	margin: 0 auto;
+	pointer-events: none;
 	animation: 12s linear 0s infinite normal backwards running clock-minute-hand;
 }
 
@@ -503,14 +613,14 @@ footer {
 
 .image-clock-second-hand {
 	position: absolute;
-	top: 0;
 	right: 0;
+	bottom: 50%;
 	left: 0;
 	width: 0;
-	height: 50%;
-	border: 1px solid var(--critical);
+	height: 45%;
+	border: thin solid #00ff00;
 	margin: 0 auto;
-	animation: .2s linear 0s infinite normal backwards running clock-second-hand;
+	animation: .2s linear 0s infinite normal backwards running clock-second-hand, 12s linear 0s infinite normal backwards running clock-second-hand-rainbow;
 }
 
 @keyframes clock-second-hand {
@@ -521,6 +631,30 @@ footer {
 	to {
 		transform-origin: bottom;
 		transform: rotate(1turn);
+	}
+}
+
+@keyframes clock-second-hand-rainbow {
+	0% {
+		border-color: #00ff00;
+	}
+	16.67% {
+		border-color: #00ffff;
+	}
+	33.33% {
+		border-color: #0000ff;
+	}
+	50% {
+		border-color: #ff00ff;
+	}
+	66.67% {
+		border-color: #ff0000;
+	}
+	83.33% {
+		border-color: #ffff00;
+	}
+	100% {
+		border-color: #00ff00;
 	}
 }
 
@@ -535,6 +669,7 @@ footer {
 	border-radius: 50%;
 	margin: auto;
 	background-color: black;
+	animation: 12s linear 0s infinite normal backwards running clock-pin-rainbow;
 }
 
 .box-footer-bar {
