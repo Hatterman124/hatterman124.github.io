@@ -70,6 +70,7 @@
 		--accent-primary: #0085f2;
 		--scrollbar-bg: #00000000;
 		--scrollbar-color: #00000040;
+		--terminal-green: #008000;
 	}
 
 	.box-battertech-logo img {
@@ -103,6 +104,7 @@
 		--accent-primary: #5e9eff;
 		--scrollbar-bg: #00000000;
 		--scrollbar-color: #ffffff40;
+		--terminal-green: #00ff00;
 	}
 
 	.box-battertech-logo img {
@@ -137,6 +139,7 @@
 	--accent-primary: #0085f2;
 	--scrollbar-bg: #00000000;
 	--scrollbar-color: #00000040;
+	--terminal-green: #008000;
 }
 
 .light .box-battertech-logo img {
@@ -168,6 +171,7 @@
 	--accent-primary: #5e9eff;
 	--scrollbar-bg: #00000000;
 	--scrollbar-color: #ffffff40;
+	--terminal-green: #00ff00;
 }
 
 .dark .box-battertech-logo img {
@@ -334,19 +338,22 @@ footer {
 
 .box-file-path {
 	border-top: thin solid var(--border-primary);
+	background-color: var(--color);
 }
 
 .box-file-path p {
 	display: block;
 	max-width: min(80vw + 4rem, var(--max-width));
 	margin: 0.25rem auto;
+	color: var(--terminal-green);
+	font-family: monospace;
 }
 
 .box-file-path a:link {
-	color: var(--text-link);
+	color: var(--terminal-green);
 }
 .box-file-path a:visited {
-	color: var(--text-visited);
+	color: var(--terminal-green);
 }
 .box-file-path a:hover {
 	text-decoration: none;
@@ -366,14 +373,14 @@ footer {
 	height: 45rem;
 	filter: opacity(25%);
 	pointer-events: none;
-	animation: 4s ease-out 0s 1 normal forwards running miku-lino-slide;
+	animation: 6s ease-out 0s 1 normal forwards running miku-lino-slide;
 }
 
 @keyframes miku-lino-slide {
 	0% {
 		translate: -22.5rem 0;
 	}
-	25% {
+	50% {
 		translate: -22.5rem 0;
 	}
 	100% {
@@ -390,14 +397,14 @@ footer {
 	height: 30rem;
 	filter: opacity(25%);
 	pointer-events: none;
-	animation: 4s ease-out 0s 1 normal forwards running marin-slide;
+	animation: 6s ease-out 0s 1 normal forwards running marin-slide;
 }
 
 @keyframes marin-slide {
 	0% {
 		translate: -26rem 0;
 	}
-	25% {
+	50% {
 		translate: -26rem 0;
 	}
 	100% {
@@ -414,14 +421,14 @@ footer {
 	height: 32rem;
 	filter: opacity(25%);
 	pointer-events: none;
-	animation: 4s ease-out 0s 1 normal forwards running sagiri-slide;
+	animation: 6s ease-out 0s 1 normal forwards running sagiri-slide;
 }
 
 @keyframes sagiri-slide {
 	0% {
 		translate: -26rem 0;
 	}
-	25% {
+	50% {
 		translate: -26rem 0;
 	}
 	100% {
@@ -436,20 +443,35 @@ footer {
 
 .box-main-content-flexbox {
 	display: flex;
+	align-items: start;
 	gap: 1rem;
 }
 
+@media(min-width: 52rem) {
+	.box-main-content-flexbox ol {
+		width: 75%
+	}
+}
+
+@media(max-width: 52rem) {
+	.box-main-content-flexbox {
+		flex-wrap: wrap;
+		width: 100%
+	}
+}
+
 .box-weeaboo {
-	display: block;
 	border: thin solid var(--border-primary);
-	margin: 0 auto;
 	background-color:  var(--background-secondary);
 	text-align: center;
+	font-weight: bold
 }
 
 .box-weeaboo img {
-	width: auto;
-	height: 32rem;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-bottom: thin solid var(--border-primary);
 }
 
 .box-main-content-assignment-4 {
@@ -574,7 +596,7 @@ footer {
 	height: 50%;
 	margin: 0 auto;
 	pointer-events: none;
-	animation: 17280s linear 0s infinite normal backwards running clock-hour-hand;
+	animation: 12960s linear 0s infinite normal backwards running clock-hour-hand;
 }
 
 @keyframes clock-hour-hand {
@@ -597,7 +619,7 @@ footer {
 	height: 50%;
 	margin: 0 auto;
 	pointer-events: none;
-	animation: 12s linear 0s infinite normal backwards running clock-minute-hand;
+	animation: 9s linear 0s infinite normal backwards running clock-minute-hand;
 }
 
 @keyframes clock-minute-hand {
@@ -618,9 +640,9 @@ footer {
 	left: 0;
 	width: 0;
 	height: 45%;
-	border: thin solid #00ff00;
+	border: medium solid #00ff00;
 	margin: 0 auto;
-	animation: .2s linear 0s infinite normal backwards running clock-second-hand, 12s linear 0s infinite normal backwards running clock-second-hand-rainbow;
+	animation: .15s linear 0s infinite normal backwards running clock-second-hand, 12s linear 0s infinite normal backwards running clock-second-hand-rainbow;
 }
 
 @keyframes clock-second-hand {
