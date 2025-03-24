@@ -593,7 +593,7 @@ footer {
 	bottom: 50%;
 	left: 0;
 	width: auto;
-	height: 35%;
+	height: 50%;
 	margin: 0 auto;
 	pointer-events: none;
 	animation: 12960s linear 0s infinite normal backwards running clock-hour-hand;
@@ -616,7 +616,7 @@ footer {
 	bottom: 50%;
 	left: 0;
 	width: auto;
-	height: 50%;
+	height: 40%;
 	margin: 0 auto;
 	pointer-events: none;
 	animation: 9s linear 0s infinite normal backwards running clock-minute-hand;
