@@ -593,21 +593,10 @@ footer {
 	bottom: 50%;
 	left: 0;
 	width: auto;
-	height: 50%;
+	height: 40%;
 	margin: 0 auto;
 	pointer-events: none;
-	animation: 12960s linear 0s infinite normal backwards running clock-hour-hand;
-}
-
-@keyframes clock-hour-hand {
-	from {
-		transform-origin: bottom;
-		transform: rotate(0turn);
-	}
-	to {
-		transform-origin: bottom;
-		transform: rotate(1turn);
-	}
+	animation: 12960s linear 0s infinite normal backwards running clock-hand;
 }
 
 .image-clock-minute-hand {
@@ -616,13 +605,13 @@ footer {
 	bottom: 50%;
 	left: 0;
 	width: auto;
-	height: 40%;
+	height: 50%;
 	margin: 0 auto;
 	pointer-events: none;
-	animation: 9s linear 0s infinite normal backwards running clock-minute-hand;
+	animation: 9s linear 0s infinite normal backwards running clock-hand;
 }
 
-@keyframes clock-minute-hand {
+@keyframes clock-hand {
 	from {
 		transform-origin: bottom;
 		transform: rotate(0turn);
