@@ -706,6 +706,20 @@ footer {
 	animation: 12s linear 0s infinite normal backwards running clock-pin-rainbow;
 }
 
+.box-assignment-6 {
+	display: flex;
+	gap: 1rem;
+	max-width: min(80vw + 4rem, var(--max-width));
+	margin: 0 auto;
+}
+
+.box-assignment-6-small {
+	border: thin solid var(--border-primary);
+	border-radius: 1rem;
+	background-color: var(--background-secondary);
+	text-align: center;
+}
+
 .box-footer-bar {
 	max-width: min(80vw + 4rem, var(--max-width));
 	margin: 0 auto;
