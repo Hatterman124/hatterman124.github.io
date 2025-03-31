@@ -275,7 +275,7 @@ footer {
 	margin: 0 auto;
 }
 
-@media(max-width: 52rem) {
+@media(max-width: 68rem) {
 	.box-header-bar-right {
 		display: none;
 	}
@@ -326,7 +326,7 @@ footer {
 	color: var(--text-link);
 }
 
-@media(max-width: 84rem) {
+@media(max-width: 96rem) {
 	.box-toggle-theme {
 		display: none;
 	}
@@ -364,7 +364,7 @@ footer {
 	text-decoration: none;
 }
 
-.image-miko-lino {
+#image-miko-lino {
 	position: absolute;
 	z-index: -1;
 	bottom: 0;
@@ -388,7 +388,7 @@ footer {
 	}
 }
 
-.image-marin {
+#image-marin {
 	position: absolute;
 	z-index: -1;
 	bottom: 0;
@@ -412,7 +412,7 @@ footer {
 	}
 }
 
-.image-sagiri {
+#image-sagiri {
 	position: absolute;
 	z-index: -1;
 	bottom: 0;
@@ -430,6 +430,29 @@ footer {
 	}
 	50% {
 		translate: -26rem 0;
+	}
+	100% {
+		translate: 0 0;
+	}
+}
+
+#image-hud {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: 32rem;
+	pointer-events: none;
+	animation: 3s ease-out 0s 1 normal forwards running hud-slide;
+}
+
+@keyframes hud-slide {
+	0% {
+		translate: 32rem 0;
+	}
+	50% {
+		translate: 32rem 0;
 	}
 	100% {
 		translate: 0 0;
@@ -460,21 +483,21 @@ footer {
 	}
 }
 
-.box-weeaboo {
+#box-weeaboo {
 	border: thin solid var(--border-primary);
 	background-color:  var(--background-secondary);
 	text-align: center;
 	font-weight: bold
 }
 
-.box-weeaboo img {
+#box-weeaboo img {
 	display: block;
 	max-width: 100%;
 	height: auto;
 	border-bottom: thin solid var(--border-primary);
 }
 
-.box-main-content-assignment-4 {
+.box-main-content-flex {
 	display: flex;
 	max-width: min(80vw + 4rem, var(--max-width));
 	margin: 0 auto;
@@ -533,7 +556,7 @@ footer {
 	text-align: center;
 }
 
-.box-clock {
+#box-clock {
 	position: relative;
 	aspect-ratio: 1 / 1;
 	width: auto;
@@ -587,7 +610,7 @@ footer {
 	}
 }
 
-.image-clock-hour-hand {
+#image-clock-hour-hand {
 	position: absolute;
 	right: 0;
 	bottom: 50%;
@@ -599,7 +622,7 @@ footer {
 	animation: 12960s linear 0s infinite normal backwards running clock-hand;
 }
 
-.image-clock-minute-hand {
+#image-clock-minute-hand {
 	position: absolute;
 	right: 0;
 	bottom: 50%;
@@ -622,7 +645,7 @@ footer {
 	}
 }
 
-.image-clock-second-hand {
+#image-clock-second-hand {
 	position: absolute;
 	right: 0;
 	bottom: 50%;
@@ -669,7 +692,7 @@ footer {
 	}
 }
 
-.image-clock-pin {
+#image-clock-pin {
 	position: absolute;
 	top: 0;
 	right: 0;
