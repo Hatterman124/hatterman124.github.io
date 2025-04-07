@@ -70,11 +70,16 @@
 		--accent-primary: #0085f2;
 		--scrollbar-bg: #00000000;
 		--scrollbar-color: #00000040;
+		--background-secondary-transparent: #f9f9fb80;
 		--terminal-green: #008000;
 	}
 
 	.box-battertech-logo img {
 		content: url("../images/battertech-logo-light.gif");
+	}
+
+	#minecraft-background{
+		background: url("../images/end-background.png");
 	}
 }
 
@@ -104,11 +109,16 @@
 		--accent-primary: #5e9eff;
 		--scrollbar-bg: #00000000;
 		--scrollbar-color: #ffffff40;
+		--background-secondary-transparent: #31313180;
 		--terminal-green: #00ff00;
 	}
 
 	.box-battertech-logo img {
 		content: url("../images/battertech-logo-dark.gif");
+	}
+
+	#minecraft-background{
+		background: url("../images/dirt-background.png");
 	}
 }
 
@@ -139,11 +149,16 @@
 	--accent-primary: #0085f2;
 	--scrollbar-bg: #00000000;
 	--scrollbar-color: #00000040;
+	--background-secondary-transparent: #f9f9fb80;
 	--terminal-green: #008000;
 }
 
 .light .box-battertech-logo img {
 		content: url("../images/battertech-logo-light.gif");
+}
+
+.light #minecraft-background{
+	background: url("../images/end-background.png");
 }
 
 .dark {
@@ -171,11 +186,17 @@
 	--accent-primary: #5e9eff;
 	--scrollbar-bg: #00000000;
 	--scrollbar-color: #ffffff40;
+	--background-secondary-transparent: #31313180;
 	--terminal-green: #00ff00;
 }
 
 .dark .box-battertech-logo img {
-		content: url("../images/battertech-logo-dark.gif");
+	content: url("../images/battertech-logo-dark.gif");
+}
+
+
+.dark #minecraft-background{
+	background: url("../images/dirt-background.png");
 }
 
 /* || HTML and body */
@@ -294,8 +315,7 @@ footer {
 .image-battertech-logo {
 	width: 14rem;
 	height: 2rem;
-	margin-top: auto;
-	margin-bottom: auto;
+	margin: auto 0;
 	image-rendering: pixelated;
 }
 
@@ -436,26 +456,105 @@ footer {
 	}
 }
 
-#image-hud {
+#box-hud {
 	position: absolute;
-	z-index: -1;
-	top: 0;
+	top: -6rem;
 	right: 0;
 	width: auto;
 	height: 32rem;
 	pointer-events: none;
-	animation: 3s ease-out 0s 1 normal forwards running hud-slide;
+	animation: 6s cubic-bezier(0.00, 1, 0, 1) 0s infinite normal forwards running hud-shake;
 }
 
-@keyframes hud-slide {
+@keyframes hud-shake {
 	0% {
-		translate: 32rem 0;
+		transform: translate(0, 0) rotate(0);
+	}
+	1% {
+		transform: translate(1rem, 1rem) rotate(5deg);
+	}
+	2% {
+		transform: translate(0, 0) rotate(0);
+	}
+	3% {
+		transform: translate(-1rem, 1rem) rotate(-5deg);
+	}
+	4% {
+		transform: translate(0, 0) rotate(0);
+	}
+	5% {
+		transform: translate(1rem, 1rem) rotate(5deg);
+	}
+	6% {
+		transform: translate(0, 0) rotate(0);
+	}
+	7% {
+		transform: translate(-1rem, 1rem) rotate(-5deg);
+	}
+	8% {
+		transform: translate(0, 0) rotate(0);
+	}
+}
+
+#image-hud-background {
+	width: auto;
+	height: 32rem;
+	image-rendering: pixelated;
+	pointer-events: none;
+}
+
+#image-hud {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	height: 32rem;
+	image-rendering: pixelated;
+	animation: 64s step-start 800ms infinite normal forwards running hud-pizza-tower;
+}
+
+@keyframes hud-pizza-tower {
+	12.5%{
+		content: url("../images/spr_tv_idle.gif");
+	}
+	25% {
+		content: url("../images/spr_tv_exprcollect.gif");
+	}
+	37.5% {
+		content: url("../images/spr_tv_exprmach3.gif");
 	}
 	50% {
-		translate: 32rem 0;
+		content: url("../images/spr_tv_exprmach4.gif");
+	}
+	62.5% {
+		content: url("../images/spr_tv_exprcombo.gif");
+	}
+	75% {
+		content: url("../images/spr_tv_exprcollect.gif");
+	}
+	87.5% {
+		content: url("../images/spr_tv_exprmach3.gif");
 	}
 	100% {
-		translate: 0 0;
+		content: url("../images/spr_tv_exprmach4.gif");
+	}
+}
+
+#image-hud-static {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	height: 32rem;
+	animation: 8s step-end 800ms infinite normal backwards running hud-pizza-tower-static;
+}
+
+@keyframes hud-pizza-tower-static {
+	96.875% {
+		content: url("../images/spr_tv_whitenoise.gif");
+	}
+	100% {
+		content: url("../images/spr_tv_blank.png");
 	}
 }
 
@@ -706,18 +805,180 @@ footer {
 	animation: 12s linear 0s infinite normal backwards running clock-pin-rainbow;
 }
 
-.box-assignment-6 {
+.box-transparent {
+	width: fit-content;
+	padding: 1rem;
+	border: thin solid var(--border-primary);
+	border-radius: 1rem;
+	background-color: var(--background-secondary-transparent);
+}
+
+#box-assignment-6 {
 	display: flex;
 	gap: 1rem;
 	max-width: min(80vw + 4rem, var(--max-width));
+	padding-bottom: 1rem;
 	margin: 0 auto;
 }
 
 .box-assignment-6-small {
+	flex: 1;
+	padding: 1rem 2rem;
 	border: thin solid var(--border-primary);
 	border-radius: 1rem;
 	background-color: var(--background-secondary);
 	text-align: center;
+}
+
+.box-link {
+	transform: translate(-0.25rem, -0.25rem);
+	display: block;
+	width: 8rem;
+	border: thin solid var(--border-primary);
+	margin: 0 auto;
+	background-color: var(--background-primary);
+	box-shadow: 0.5rem 0.5rem var(--border-secondary);
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+
+.box-link:hover {
+	transform: translate(0, 0);
+	background-color: var(--text-link-bg);
+	box-shadow: 0.25rem 0.25rem var(--border-secondary);
+}
+
+#modal-fnaf-open {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	background-color: var(--background-secondary-transparent);
+}
+
+#modal-fnaf-open:target {
+	opacity: 1;
+	transition: all .5s ease-in-out;
+	z-index: 1;
+}
+
+#box-modal-fnaf {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 32rem;
+	height: fit-content;
+	padding-bottom: 1rem;
+	border: thin solid var(--border-primary);
+	margin: auto;
+	background-color: var(--background-secondary);
+	text-align: center;
+	transform: translate(0, -100vh);
+}
+
+#modal-fnaf-open:target #box-modal-fnaf {
+	opacity: 1;
+	transform: translate(0, 0);
+	transition: all .5s ease-in-out;
+}
+
+#image-fnaf {
+	width: auto;
+	height: 14rem;
+	border: thin solid var(--border-primary);
+	border-radius: 0.5rem;
+	margin: 0 auto;
+}
+
+#modal-undertale-open {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	background-color: var(--background-secondary-transparent);
+}
+
+#modal-undertale-open:target {
+	opacity: 1;
+	transition: all .5s ease-in-out;
+	z-index: 1;
+}
+
+#box-modal-undertale {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 32rem;
+	height: fit-content;
+	padding-bottom: 1rem;
+	border: thin solid var(--border-primary);
+	margin: auto;
+	background-color: var(--background-secondary);
+	text-align: center;
+	transform: translate(0, -100vh);
+}
+
+#modal-undertale-open:target #box-modal-undertale {
+	opacity: 1;
+	transform: translate(0, 0);
+	transition: all .5s ease-in-out;
+}
+
+#image-undertale {
+	width: auto;
+	height: 14rem;
+	border: thin solid var(--border-primary);
+	border-radius: 0.5rem;
+	margin: 0 auto;
+}
+
+#image-undertale-paparus {
+	position: fixed;
+	top: 70vh;
+	left: 16rem;
+	width: auto;
+	height: 14rem;
+}
+
+#image-undertale-sans {
+	position: fixed;
+	top: 40vh;
+	right: 8rem;
+	width: auto;
+	height: 14rem;
+}
+
+.box-modal-header {
+	height: 2rem;
+	border-bottom: thin solid var(--border-primary);
+	margin-bottom: 1rem;
+	background-color: var(--background-primary);
+}
+
+.box-modal-header a {
+	float: right;
+	width: 2rem;
+	height: 2rem;
+	border-left: thin solid var(--border-primary);
+	background-color: var(--background-secondary);
+	color: var(--critical);
+	text-decoration: none;
+}
+
+.box-modal-header a:hover {
+	background-color: var(--critical);
+	color: var(--text-primary);
+	text-decoration: none;
 }
 
 .box-footer-bar {
