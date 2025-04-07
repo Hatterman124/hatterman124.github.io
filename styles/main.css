@@ -463,7 +463,14 @@ footer {
 	width: auto;
 	height: 32rem;
 	pointer-events: none;
+	transition: all 250ms ease-in-out;
 	animation: 6s cubic-bezier(0.00, 1, 0, 1) 0s infinite normal forwards running hud-shake;
+}
+
+@media(max-width: 68rem) {
+	#box-hud {
+		right: -40rem;
+	}
 }
 
 @keyframes hud-shake {
@@ -851,19 +858,19 @@ footer {
 
 #modal-fnaf-open {
 	position: fixed;
-	z-index: -1;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	opacity: 0;
 	background-color: var(--background-secondary-transparent);
+	pointer-events: none;
+	transition: all 500ms ease-in-out;
 }
 
 #modal-fnaf-open:target {
 	opacity: 1;
-	transition: all .5s ease-in-out;
-	z-index: 1;
+	pointer-events: auto;
 }
 
 #box-modal-fnaf {
@@ -880,12 +887,12 @@ footer {
 	background-color: var(--background-secondary);
 	text-align: center;
 	transform: translate(0, -100vh);
+	transition: all 500ms ease-in-out;
 }
 
 #modal-fnaf-open:target #box-modal-fnaf {
 	opacity: 1;
 	transform: translate(0, 0);
-	transition: all .5s ease-in-out;
 }
 
 #image-fnaf {
@@ -898,19 +905,19 @@ footer {
 
 #modal-undertale-open {
 	position: fixed;
-	z-index: -1;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	opacity: 0;
 	background-color: var(--background-secondary-transparent);
+	pointer-events: none;
+	transition: all 500ms ease-in-out;
 }
 
 #modal-undertale-open:target {
 	opacity: 1;
-	transition: all .5s ease-in-out;
-	z-index: 1;
+	pointer-events: auto;
 }
 
 #box-modal-undertale {
@@ -927,12 +934,12 @@ footer {
 	background-color: var(--background-secondary);
 	text-align: center;
 	transform: translate(0, -100vh);
+	transition: all 500ms ease-in-out;
 }
 
 #modal-undertale-open:target #box-modal-undertale {
 	opacity: 1;
 	transform: translate(0, 0);
-	transition: all .5s ease-in-out;
 }
 
 #image-undertale {
@@ -950,11 +957,11 @@ footer {
 	width: auto;
 	height: 14rem;
 	transform: translate(-50vw, 0);
+	transition: all 2s ease-in-out;
 }
 
 #modal-undertale-open:target #image-undertale-papyrus {
 	transform: translate(50vw, 0);
-	transition: all 2s ease-in-out;
 }
 
 #image-undertale-sans {
@@ -964,11 +971,11 @@ footer {
 	width: auto;
 	height: 14rem;
 	transform: translate(50vw, 0);
+	transition: all 2s ease-in-out;
 }
 
 #modal-undertale-open:target #image-undertale-sans {
 	transform: translate(-60vw, 0);
-	transition: all 2s ease-in-out;
 }
 
 .box-modal-header {
@@ -1002,6 +1009,10 @@ footer {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	width: 8rem;
 	height: 8rem;
 }
 
@@ -1021,6 +1032,10 @@ footer {
 #lick:hover #image-lick{
 	transform: translate(8rem, 0);
 	transition: all 250ms ease-in-out 2s;
+}
+
+#lick:not(:hover) #image-lick{
+	transition: all 250ms ease-in-out;
 }
 
 .box-footer-bar {
