@@ -895,6 +895,36 @@ footer {
 	transform: translate(0, 0);
 }
 
+#image-foxy-jumpscare {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	min-width: 100%;
+	min-height: 100%;
+	opacity: 0;
+	pointer-events: none;
+}
+
+#modal-fnaf-open:target #image-foxy-jumpscare {
+	pointer-events: auto;
+	opacity: 1;
+	animation: 840ms step-start 0s 1 normal forwards running foxy-jumpscare;
+}
+
+@keyframes foxy-jumpscare {
+	from {
+		opacity: 1;
+		content: url("../images/foxy.gif")
+	}
+	to {
+		opacity: 0;
+		content: url("../images/void.png")
+	}
+}
+
 #image-fnaf {
 	width: auto;
 	height: 14rem;
