@@ -943,20 +943,32 @@ footer {
 	margin: 0 auto;
 }
 
-#image-undertale-paparus {
+#image-undertale-papyrus {
 	position: fixed;
-	top: 70vh;
-	left: 16rem;
+	top: 60vh;
+	left: 30rem;
 	width: auto;
 	height: 14rem;
+	transform: translate(-50vw, 0);
+}
+
+#modal-undertale-open:target #image-undertale-papyrus {
+	transform: translate(50vw, 0);
+	transition: all 2s ease-in-out;
 }
 
 #image-undertale-sans {
 	position: fixed;
-	top: 40vh;
-	right: 8rem;
+	top: 30vh;
+	right: 12rem;
 	width: auto;
 	height: 14rem;
+	transform: translate(50vw, 0);
+}
+
+#modal-undertale-open:target #image-undertale-sans {
+	transform: translate(-60vw, 0);
+	transition: all 2s ease-in-out;
 }
 
 .box-modal-header {
@@ -980,6 +992,35 @@ footer {
 	background-color: var(--critical);
 	color: var(--text-primary);
 	text-decoration: none;
+}
+
+.box-modal-header a:visited {;
+	color: var(--critical);
+}
+
+#lick {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 8rem;
+}
+
+#lick:hover p{
+	opacity: 0;
+	transition: all 2s linear;
+}
+
+#image-lick {
+	position: absolute;
+	bottom: 0;
+	left: -8rem;
+	width: 8rem;
+	height: 8rem;
+}
+
+#lick:hover #image-lick{
+	transform: translate(8rem, 0);
+	transition: all 250ms ease-in-out 2s;
 }
 
 .box-footer-bar {
