@@ -54,7 +54,7 @@ footer a:link {
 	color: white
 }
 
-footer a:visted {
+footer a:visited {
 	color: white
 }
 
@@ -413,5 +413,5 @@ hr {
 	}
 	100% {
 		left: calc(-2 * min(80vw + 4rem, var(--max-width)));
-	}}
+	}
 }
