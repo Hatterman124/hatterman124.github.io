@@ -26,7 +26,7 @@ body {
 
 header,
 main,
-footer {
+footer > div {
 	width: min(80vw + 4rem, var(--max-width));
 	margin: 0 auto;
 	text-align: center;
@@ -39,6 +39,33 @@ header {
 main {
 	position: relative;
 	padding: 2rem 0;
+}
+
+footer {
+	padding: 1rem 0;
+	background-color: gray;
+}
+
+footer p {
+	color: white;
+}
+
+footer a:link {
+	color: white
+}
+
+footer a:visted {
+	color: white
+}
+
+main a:hover {
+	text-decoration: none;
+}
+
+main a:active {
+	color: gray;
+	background-color: darkgray;
+	text-decoration: none;
 }
 
 h1,
@@ -73,9 +100,13 @@ hr {
 
 .l-flexbox {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	flex-wrap: wrap;
 	gap: 1rem;
+}
+
+.l-right {
+	float: right;
 }
 
 /* || Module*/
@@ -315,6 +346,15 @@ hr {
 .button-add-to-bag:hover {
 	transform: translate(0, 0);
 	box-shadow: 0.25rem 0.25rem gray;
+}
+
+.link-icon {
+	height: 4rem;
+	width: auto;
+}
+
+#author-name {
+	clear: right;
 }
 
 /* || Animations*/
