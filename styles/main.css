@@ -130,7 +130,7 @@ hr {
 	animation: 16s ease-in-out 0s infinite alternate both running main-slideshow-slide;
 }
 
-#main-slide {
+.main-slide {
 	float: left;
 	height: 4rem;
 	width: min(80vw + 4rem, var(--max-width));
@@ -139,7 +139,7 @@ hr {
 	text-align: center;
 }
 
-#main-slide p {
+.main-slide p {
 	margin: 0.5rem 0;
 }
 
