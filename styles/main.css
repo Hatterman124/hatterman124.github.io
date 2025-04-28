@@ -84,7 +84,7 @@ main {
 	width: 25vw;
 	background-color: var(--bs-blue);
 	clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-left-slide;
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-left-slide;
 }
 
 #loading-screen-door-right {
@@ -92,10 +92,13 @@ main {
 	top: 0;
 	right: 0;
 	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 85vw;
 	background-color: var(--bs-red);
 	clip-path: polygon(11.75% 0%, 100% 0%, 100% 100%, 0% 100%);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-right-slide;
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-right-slide;
 }
 
 #loading-screen-door-left-lock {
@@ -109,8 +112,8 @@ main {
 	border-radius: 100% 0 0 100% / 50%;
 	margin: auto 0;
 	background-color: var(--bs-green);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-left-slide,
-	           750ms cubic-bezier(0, 0, 0.5, 1.5) 4s 1 normal backwards running loading-screen-door-left-lock-rotate;
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-left-slide,
+	           1s cubic-bezier(0, 0, 0.5, 1.5) 8s 1 normal backwards running loading-screen-door-left-lock-rotate;
 }
 
 #loading-screen-door-right-lock {
@@ -124,8 +127,8 @@ main {
 	border-radius: 0 100% 100% 0 / 50%;
 	margin: auto 0;
 	background-color: var(--bs-green);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-right-slide,
-	           750ms cubic-bezier(0, 0, 0.5, 1.5) 4s 1 normal backwards running loading-screen-door-right-lock-rotate;
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-right-slide,
+	           1s cubic-bezier(0, 0, 0.5, 1.5) 8s 1 normal backwards running loading-screen-door-right-lock-rotate;
 }
 
 #loading-screen-slide {
@@ -137,7 +140,7 @@ main {
 	border: thick solid var(--bs-black);
 	background-color: var(--bs-yellow);
 	color: var(--bs-red);
-	animation: 5s linear 0s 1 normal both running loading-screen-slide-left;
+	animation: 10s linear 0s 1 normal both running loading-screen-slide-left;
 }
 
 #loading-infobox {
@@ -153,14 +156,14 @@ main {
 	width: 8rem;
 	margin-bottom: 1rem;
 	outline: thick double var(--bs-border-color);
-	animation: 500ms linear 250ms infinite normal none running loading-bar-shake;
+	animation: 1s linear 500ms infinite normal none running loading-bar-shake;
 }
 
 #loading-infobox-bar-inside {
 	height: 1rem;
 	width: 0;
 	background-color: var(--bs-red);
-	animation: 3750ms linear 250ms 1 normal forwards running loading-bar-move;
+	animation: 7500ms linear 500ms 1 normal forwards running loading-bar-move;
 }
 
 .letter-bounce {
@@ -218,7 +221,26 @@ main {
 	width: 400vw;
 	background: url("../images/bee-background.jpg");
 	background-size: 16rem 16rem;
-	animation: 60s linear infinite alternate none running background-scroll;
+	animation: 60s linear 0s infinite alternate none running background-scroll;
+}
+
+#loading-screen-text-scroll0,
+#loading-screen-text-scroll1,
+#loading-screen-text-scroll2 {
+	position: absolute;
+	font-size: 3rem;
+}
+
+#loading-screen-text-scroll0 {
+	animation: 2s linear 2s 1 normal both running loading-screen-text-scroll-move-up;
+}
+
+#loading-screen-text-scroll1 {
+	animation: 2s linear 4s 1 normal both running loading-screen-text-scroll-move-up;
+}
+
+#loading-screen-text-scroll2 {
+	animation: 2s linear 6s 1 normal both running loading-screen-text-scroll-move-up;
 }
 
 #image-bee-movie {
@@ -358,5 +380,20 @@ main {
 	to {
 		top: -200vh;
 		left: -200vw;
+	}
+}
+
+@keyframes loading-screen-text-scroll-move-up {
+	0% {
+		transform: translateY(100vh);
+	}
+	2% {
+		transform: translateY(5vh);
+	}
+	98% {
+		transform: translateY(-5vh);
+	}
+	100% {
+		transform: translateY(-100vh);
 	}
 }
