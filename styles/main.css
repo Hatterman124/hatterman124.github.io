@@ -55,14 +55,19 @@ body {
 
 /* || Layout*/
 
-#loading-screen {
+.l-html-column {
+	width: min(80vw + 4rem, 1440px);
+	margin: 0 auto;
+}
+
+#l-loading-screen {
 	position: fixed;
 	z-index: 1;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	animation: 0s step-start 5s 1 normal forwards running loading-screen-collapse;
+	animation: 0s step-start 6s 1 normal forwards running loading-screen-collapse;
 }
 
 /* || Module*/
@@ -75,6 +80,7 @@ body {
 	width: 25vw;
 	background-color: var(--bs-blue);
 	clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-left-slide;
 }
 
 #loading-screen-door-right {
@@ -85,6 +91,37 @@ body {
 	width: 85vw;
 	background-color: var(--bs-red);
 	clip-path: polygon(11.75% 0%, 100% 0%, 100% 100%, 0% 100%);
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-right-slide;
+}
+
+#loading-screen-door-left-lock {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 15vw;
+	width: 5vw;
+	height: 10vw;
+	border: thick double var(--bs-black);
+	border-radius: 100% 0 0 100% / 50%;
+	margin: auto 0;
+	background-color: var(--bs-green);
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-left-slide,
+	           750ms cubic-bezier(0, 0, 0.5, 1.5) 4s 1 normal backwards running loading-screen-door-left-lock-rotate;
+}
+
+#loading-screen-door-right-lock {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 20vw;
+	width: 5vw;
+	height: 10vw;
+	outline: thick solid var(--bs-black);
+	border-radius: 0 100% 100% 0 / 50%;
+	margin: auto 0;
+	background-color: var(--bs-green);
+	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 5s 1 normal forwards running loading-screen-door-right-slide,
+	           750ms cubic-bezier(0, 0, 0.5, 1.5) 4s 1 normal backwards running loading-screen-door-right-lock-rotate;
 }
 
 #loading-screen-slide {
@@ -93,6 +130,7 @@ body {
 	bottom: 0;
 	left: -16rem;
 	height: 8rem;
+	border: thick solid var(--bs-black);
 	background-color: var(--bs-yellow);
 	color: var(--bs-red);
 	animation: 5s linear 0s 1 normal both running loading-screen-slide-left;
@@ -162,13 +200,64 @@ body {
 	animation-delay: 1125ms;
 }
 
+
 /* || State*/
+
+/* || Theme*/
+
+#image-bee-movie {
+	display: block;
+	height: 16rem;
+	width: auto;
+	margin: 0 auto;
+}
 
 /* || Animations*/
 
 @keyframes loading-screen-collapse {
 	to {
 		display: none;
+		pointer-events: none;
+	}
+}
+
+@keyframes loading-screen-door-left-slide {
+	75% {
+		transform: translate(-5vw);
+	}
+	100% {
+		transform: translate(-100vw);
+	}
+}
+
+@keyframes loading-screen-door-right-slide {
+	75% {
+		transform: translate(5vw);
+	}
+	100% {
+		transform: translate(100vw);
+	}
+}
+
+@keyframes loading-screen-door-left-lock-rotate {
+	from {
+		transform-origin: right;
+		transform: rotate(0.5turn);
+	}
+	to {
+		transform-origin: right;
+		transform: rotate(0turn);
+	}
+}
+
+@keyframes loading-screen-door-right-lock-rotate {
+	from {
+		transform-origin: left;
+		transform: rotate(0.5turn);
+	}
+	to {
+		transform-origin: left;
+		transform: rotate(0turn);
 	}
 }
 
