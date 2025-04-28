@@ -53,6 +53,10 @@ body {
 	min-height: 100vh;
 }
 
+main {
+	overflow: hidden;
+}
+
 /* || Layout*/
 
 .l-html-column {
@@ -161,7 +165,7 @@ body {
 
 .letter-bounce {
 	display: inline-block;
-	animation: 250ms ease infinite alternate none running bounce;
+	animation: 250ms ease 0s infinite alternate none running bounce;
 }
 
 .letter-bounce:nth-child(2) {
@@ -205,9 +209,28 @@ body {
 
 /* || Theme*/
 
+#bee-background {
+	position: fixed;
+	z-index: -1;
+	top: -100vh;
+	left: -100vw;
+	height: 400vh;
+	width: 400vw;
+	background: url("../images/bee-background.jpg");
+	background-size: 16rem 16rem;
+	animation: 60s linear infinite alternate none running background-scroll;
+}
+
 #image-bee-movie {
 	display: block;
 	height: 16rem;
+	width: auto;
+	margin: 0 auto;
+}
+
+.image-bee {
+	display: block;
+	height: 18rem;
 	width: auto;
 	margin: 0 auto;
 }
@@ -324,5 +347,16 @@ body {
 @keyframes bounce {
 	100% {
 		transform: translateY(-0.5rem);
+	}
+}
+
+@keyframes background-scroll {
+	from {
+		top: 0;
+		left: 0;
+	}
+	to {
+		top: -200vh;
+		left: -200vw;
 	}
 }

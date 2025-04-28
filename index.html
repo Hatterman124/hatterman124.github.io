@@ -35,7 +35,7 @@
 		<script src="scripts/main.js" defer></script>
 	</head>
 	<body>
-		<header>
+		<header class="bg-secondary">
 			<div class="l-html-column">
 				<nav class="navbar navbar-expand-lg">
 					<a class="navbar-brand" href="#">Battertech</a>
@@ -61,9 +61,9 @@
 				</nav>
 			</div>
 		</header>
-		<main>
+		<main class="my-3">
+			<div id="bee-background"></div>
 			<div id="l-loading-screen">
-				
 				<div id="loading-screen-door-left">
 				</div>
 				<div id="loading-screen-door-right">
@@ -93,7 +93,7 @@
 				</div>
 			</div>
 			<div class="l-html-column">
-				<div class="container bg-primary rounded p-3">
+				<div class="container bg-secondary rounded p-3 pt-3">
 					<h1>I don't know what I'm doing</h1>
 					<p>
 						Why is Bootstrap so hard?<br>
@@ -102,6 +102,34 @@
 						Anyways enjoy the entire bee movie.
 					</p>
 					<img id="image-bee-movie" src="images/bee.gif" alt="The entire bee movie in low quality and sped up">
+					<p>
+						For some reason, .img-fluid breaks everything.
+					</p>
+				</div>
+				<div class="row">
+					<div class="col bg-secondary rounded p-3 m-3">
+						<img class="image-bee" src="images/angry-bee.gif" alt="An angry bee from Minecraft">
+						<div class="mb-0">
+							<h3>Minecraft Bee</h3>
+							<p>
+								I hate these little s*** like you won't believe.
+							</p>
+						</div>
+					</div>
+					<div class="col bg-secondary rounded p-3 m-3">
+						<img class="image-bee" src="images/queen-bee.gif" alt="Rumor Honeybottoms the queen bee boss from Cuphead">
+						<h3>Cuphead Bee</h3>
+						<p>
+							STOP AUTOSCROLLING
+						</p>
+					</div>
+					<div class="col bg-secondary rounded p-3 m-3">
+						<img class="image-bee" src="images/weird-bee.png" alt="A honey bee from the Minecraft mod The Grimor of Gaia">
+						<h3>Minecraft Bee?</h3>
+						<p>
+							I just wanted to play normal Minecraft
+						</p>
+					</div>
 				</div>
 			</div>
 		</main>
