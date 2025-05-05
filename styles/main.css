@@ -41,365 +41,99 @@
 
 /* || Global Variables */
 
-:root {
-	--max-width: 1440px;
+/* || Base */
+
+/* || Layout */
+
+/* || Module */
+
+/* || State */
+
+/* || Theme */
+
+.background-color-normal-type {
+	background-color: #9FA19F;
 }
 
-/* || Base*/
-
-body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+.background-color-fighting-type {
+	background-color: #FF8000;
 }
 
-main {
-	overflow: hidden;
+.background-color-flying-type {
+	background-color: #81B9EF;
 }
 
-/* || Layout*/
-
-.l-html-column {
-	width: min(80vw + 4rem, 1440px);
-	margin: 0 auto;
+.background-color-poison-type {
+	background-color: #9141CB;
 }
 
-#l-loading-screen {
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	animation: 0s step-start 11s 1 normal both running loading-screen-collapse;
+.background-color-ground-type {
+	background-color: #915121;
 }
 
-/* || Module*/
-
-#loading-screen-door-left {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	width: 25vw;
-	background-color: var(--bs-blue);
-	clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-left-slide;
+.background-color-rock-type {
+	background-color: #AFA981;
 }
 
-#loading-screen-door-right {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 85vw;
-	background-color: var(--bs-red);
-	clip-path: polygon(11.75% 0%, 100% 0%, 100% 100%, 0% 100%);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-right-slide;
+.background-color-bug-type {
+	background-color: #91A119;
 }
 
-#loading-screen-door-left-lock {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 15vw;
-	width: 5vw;
-	height: 10vw;
-	border: thick double var(--bs-black);
-	border-radius: 100% 0 0 100% / 50%;
-	margin: auto 0;
-	background-color: var(--bs-green);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-left-slide,
-	           1s cubic-bezier(0, 0, 0.5, 1.5) 8s 1 normal backwards running loading-screen-door-left-lock-rotate;
+.background-color-ghost-type {
+	background-color: #704170;
 }
 
-#loading-screen-door-right-lock {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 20vw;
-	width: 5vw;
-	height: 10vw;
-	outline: thick solid var(--bs-black);
-	border-radius: 0 100% 100% 0 / 50%;
-	margin: auto 0;
-	background-color: var(--bs-green);
-	animation: 1s cubic-bezier(0, 0, 0.5, 1.5) 10s 1 normal forwards running loading-screen-door-right-slide,
-	           1s cubic-bezier(0, 0, 0.5, 1.5) 8s 1 normal backwards running loading-screen-door-right-lock-rotate;
+.background-color-steel-type {
+	background-color: #60A1B8;
 }
 
-#loading-screen-slide {
-	position: fixed;
-	right: -16rem;
-	bottom: 0;
-	left: -16rem;
-	height: 8rem;
-	border: thick solid var(--bs-black);
-	background-color: var(--bs-yellow);
-	color: var(--bs-red);
-	animation: 10s linear 0s 1 normal both running loading-screen-slide-left;
+.background-color-fire-type {
+	background-color: #E62829;
 }
 
-#loading-infobox {
-	position: relative;
-	top: 2rem;
-	width: 8rem;
-	margin: 0 auto;
-	text-align: center;
+.background-color-water-type {
+	background-color: #2980EF;
 }
 
-#loading-infobox-bar {
-	height: 1rem;
-	width: 8rem;
-	margin-bottom: 1rem;
-	outline: thick double var(--bs-border-color);
-	animation: 1s linear 500ms infinite normal none running loading-bar-shake;
+.background-color-grass-type {
+	background-color: #3FA129;
 }
 
-#loading-infobox-bar-inside {
-	height: 1rem;
-	width: 0;
-	background-color: var(--bs-red);
-	animation: 7500ms linear 500ms 1 normal forwards running loading-bar-move;
+.background-color-electric-type {
+	background-color: #FAC000;
 }
 
-.letter-bounce {
-	display: inline-block;
-	animation: 250ms ease 0s infinite alternate none running bounce;
+.background-color-psychic-type {
+	background-color: #EF4179;
 }
 
-.letter-bounce:nth-child(2) {
-	animation-delay: 125ms;
+.background-color-ice-type {
+	background-color: #3DCEF3;
 }
 
-.letter-bounce:nth-child(3) {
-	animation-delay: 250ms;
+.background-color-dragon-type {
+	background-color: #5060E1;
 }
 
-.letter-bounce:nth-child(4) {
-	animation-delay: 375ms;
+.background-color-dark-type {
+	background-color: #624D4E;
 }
 
-.letter-bounce:nth-child(5) {
-	animation-delay: 500ms;
+.background-color-fairy-type {
+	background-color: #EF70EF;
 }
 
-.letter-bounce:nth-child(6) {
-	animation-delay: 625ms;
+.font-size-half {
+	font-size: 0.5rem;
 }
 
-.letter-bounce:nth-child(7) {
-	animation-delay: 750ms;
+.height-4rem {
+	height: 4rem;
 }
 
-.letter-bounce:nth-child(8) {
-	animation-delay: 875ms;
-}
-
-.letter-bounce:nth-child(9) {
-	animation-delay: 1s;
-}
-
-.letter-bounce:nth-child(10) {
-	animation-delay: 1125ms;
-}
-
-
-/* || State*/
-
-/* || Theme*/
-
-#bee-background {
-	position: fixed;
-	z-index: -1;
-	top: -100vh;
-	left: -100vw;
-	height: 400vh;
-	width: 400vw;
-	background: url("../images/bee-background.jpg");
-	background-size: 16rem 16rem;
-	animation: 60s linear 0s infinite alternate none running background-scroll;
-}
-
-#loading-screen-text-scroll0,
-#loading-screen-text-scroll1,
-#loading-screen-text-scroll2 {
-	position: absolute;
-	font-size: 3rem;
-}
-
-#loading-screen-text-scroll0 {
-	animation: 2s linear 2s 1 normal both running loading-screen-text-scroll-move-up;
-}
-
-#loading-screen-text-scroll1 {
-	animation: 2s linear 4s 1 normal both running loading-screen-text-scroll-move-up;
-}
-
-#loading-screen-text-scroll2 {
-	animation: 2s linear 6s 1 normal both running loading-screen-text-scroll-move-up;
-}
-
-#image-bee-movie {
-	display: block;
-	max-height: 16rem;
+#image-team-rocket-logo {
+	height: 4rem;
 	width: auto;
-	margin: 0 auto;
 }
 
-.image-bee {
-	display: block;
-	max-height: 18rem;
-	width: auto;
-	margin: 0 auto;
-}
-
-/* || Animations*/
-
-@keyframes loading-screen-collapse {
-	from {
-		display: contents;
-		opacity: 1;
-		pointer-events: auto;
-	}
-	to {
-		display: none;
-		opacity: 0;
-		pointer-events: none;
-	}
-}
-
-@keyframes loading-screen-door-left-slide {
-	75% {
-		transform: translate(-5vw);
-	}
-	100% {
-		transform: translate(-100vw);
-	}
-}
-
-@keyframes loading-screen-door-right-slide {
-	75% {
-		transform: translate(5vw);
-	}
-	100% {
-		transform: translate(100vw);
-	}
-}
-
-@keyframes loading-screen-door-left-lock-rotate {
-	from {
-		transform-origin: right;
-		transform: rotate(0.5turn);
-	}
-	to {
-		transform-origin: right;
-		transform: rotate(0turn);
-	}
-}
-
-@keyframes loading-screen-door-right-lock-rotate {
-	from {
-		transform-origin: left;
-		transform: rotate(0.5turn);
-	}
-	to {
-		transform-origin: left;
-		transform: rotate(0turn);
-	}
-}
-
-@keyframes loading-screen-slide-left {
-	0% {
-		left: 100vw;
-	}
-	5% {
-		left: 0;
-	}
-	80% {
-		right: 0;
-	}
-	85% {
-		right: 100vw;
-	}
-	100% {
-		right: 100vw;
-	}
-}
-
-@keyframes loading-bar-shake {
-	0% {
-		transform: translate(0.01rem, 0.01rem) rotate(0);
-	}
-	10% {
-		transform: translate(-0.01rem, -0.02rem) rotate(-1deg);
-	}
-	20% {
-		transform: translate(-0.03rem, 0) rotate(1deg);
-	}
-	30% {
-		transform: translate(0.03rem, 0.02rem) rotate(0);
-	}
-	40% {
-		transform: translate(0.01rem, -0.01rem) rotate(1deg);
-	}
-	50% {
-		transform: translate(-0.01rem, 0.02rem) rotate(-1deg);
-	}
-	60% {
-		transform: translate(0.03rem, 0.01) rotate(0);
-	}
-	70% {
-		transform: translate(0.03rem, 0.01rem) rotate(-1deg);
-	}
-	80% {
-		transform: translate(-0.01rem, -0.01rem) rotate(1deg);
-	}
-	90% {
-		transform: translate(0.01rem, 0.02rem) rotate(0);
-	}
-	100% {
-		transform: translate(0.01rem, -0.02rem) rotate(-1deg);
-	}
-}
-
-@keyframes loading-bar-move {
-	100% {
-		width: 8rem;
-	}
-}
-
-@keyframes bounce {
-	100% {
-		transform: translateY(-0.5rem);
-	}
-}
-
-@keyframes background-scroll {
-	from {
-		top: 0;
-		left: 0;
-	}
-	to {
-		top: -200vh;
-		left: -200vw;
-	}
-}
-
-@keyframes loading-screen-text-scroll-move-up {
-	0% {
-		transform: translateY(100vh);
-	}
-	2% {
-		transform: translateY(5vh);
-	}
-	98% {
-		transform: translateY(-5vh);
-	}
-	100% {
-		transform: translateY(-100vh);
-	}
-}
+/* || Animations */
