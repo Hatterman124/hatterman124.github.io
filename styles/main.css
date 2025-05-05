@@ -135,6 +135,20 @@ body {
 	height: 4rem;
 }
 
+#image-female-grunt {
+	position: absolute;
+	z-index: -1;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	height: 100vh;
+	width: auto;
+	opacity: 0.125;
+	image-rendering: pixelated;
+	animation: 30s linear 0s infinite normal none running grunt-slide,
+	           30s step-end 0s infinite normal none running grunt-flip;
+}
+
 #image-team-rocket-logo {
 	height: 4rem;
 	width: auto;
@@ -154,3 +168,30 @@ body {
 }
 
 /* || Animations */
+
+@keyframes grunt-slide {
+	0% {
+		right: 0;
+		left: auto;
+	}
+	50% {
+		right: calc(100vw - 100vh);
+		left: auto;
+	}
+	100% {
+		right: 0;
+		left: auto;
+	}
+}
+
+@keyframes grunt-flip {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(-1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
