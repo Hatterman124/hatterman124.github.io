@@ -41,13 +41,34 @@
 
 /* || Global Variables */
 
+:root,
+[data-bs-theme=light] {
+	--bs-primary: #dc3545;
+	--bs-primary-rgb: 220, 53, 69;
+	--bs-primary-text-emphasis: #58151c;
+	--bs-primary-bg-subtle: #f8d7da;
+	--bs-primary-border-subtle: #f1aeb5;
+}
+
+[data-bs-theme=dark] {
+	color-scheme: dark;
+	--bs-primary-text-emphasis: #ea868f;
+	--bs-primary-bg-subtle: #2c0b0e;
+	--bs-primary-border-subtle: #842029;
+}
+
 /* || Base */
 
 body {
+	overflow-x: hidden;
 	max-width: 100vw;
 }
 
 /* || Layout */
+
+.l-w-fit-content {
+	width: fit-content;
+}
 
 /* || Module */
 
@@ -127,10 +148,6 @@ body {
 	background-color: #EF70EF;
 }
 
-.font-size-half {
-	font-size: 0.5rem;
-}
-
 .height-4rem {
 	height: 4rem;
 }
@@ -140,7 +157,6 @@ body {
 	z-index: -1;
 	right: 0;
 	bottom: 0;
-	left: auto;
 	height: 100vh;
 	width: auto;
 	opacity: 0.125;
@@ -172,15 +188,12 @@ body {
 @keyframes grunt-slide {
 	0% {
 		right: 0;
-		left: auto;
 	}
 	50% {
 		right: calc(100vw - 100vh);
-		left: auto;
 	}
 	100% {
 		right: 0;
-		left: auto;
 	}
 }
 
