@@ -48,6 +48,12 @@
 	--bs-primary-text-emphasis: #58151c;
 	--bs-primary-bg-subtle: #f8d7da;
 	--bs-primary-border-subtle: #f1aeb5;
+	--bs-link-color: #dc3545;
+	--bs-link-color-rgb: 220, 53, 69;
+	--bs-link-hover-color: #b02a37;
+	--bs-link-hover-color-rgb: 176, 42, 55;
+	--black-white: #ffffff;
+	--black-white-invert: #000000;
 }
 
 [data-bs-theme=dark] {
@@ -55,6 +61,23 @@
 	--bs-primary-text-emphasis: #ea868f;
 	--bs-primary-bg-subtle: #2c0b0e;
 	--bs-primary-border-subtle: #842029;
+	--bs-link-color: #ea868f;
+	--bs-link-hover-color: #f5bfc4;
+	--bs-link-color-rgb: 234, 134, 143;
+	--bs-link-hover-color-rgb: 245, 191, 196;
+	--black-white: #000000;
+	--black-white-invert: #ffffff;
+}
+
+.btn-primary {
+	--bs-btn-bg: #dc3545;
+	--bs-btn-border-color: #dc3545;
+	--bs-btn-hover-bg: #b52b38;
+	--bs-btn-hover-border-color: #b02a37;
+	--bs-btn-focus-shadow-rgb: 227, 93, 106;
+	--bs-btn-active-bg: #b02a37;
+	--bs-btn-disabled-bg: #dc3545;
+	--bs-btn-disabled-border-color: #dc3545;
 }
 
 /* || Base */
@@ -70,7 +93,19 @@ body {
 	width: fit-content;
 }
 
+.l-h-3rem {
+	height: 3rem;
+}
+
+.l-h-9rem {
+	height: 9rem;
+}
+
 /* || Module */
+
+.box-image-card {
+	background-image: linear-gradient(var(--black-white), var(--bs-primary-bg-subtle)) !important;
+}
 
 /* || State */
 
@@ -153,12 +188,15 @@ body {
 }
 
 #image-female-grunt {
-	position: absolute;
+	position: fixed;
 	z-index: -1;
+	top: 4rem;
 	right: 0;
 	bottom: 0;
 	height: 100vh;
 	width: auto;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
 	opacity: 0.125;
 	image-rendering: pixelated;
 	animation: 30s linear 0s infinite normal none running grunt-slide,
@@ -177,23 +215,28 @@ body {
 	image-rendering: pixelated;
 }
 
+.text-black-white-invert {
+	color: var(--black-white-invert);
+}
+
 .image-card {
-	height: 24rem;
+	height: 12rem;
 	width: auto;
 	image-rendering: pixelated;
+	animation: 4s step-end 0s infinite normal none running pokemon-fidget;
 }
 
 /* || Animations */
 
 @keyframes grunt-slide {
 	0% {
-		right: 0;
+		right: -75vh;
 	}
 	50% {
-		right: calc(100vw - 100vh);
+		right: 100vw;
 	}
 	100% {
-		right: 0;
+		right: -75vh;
 	}
 }
 
@@ -206,5 +249,23 @@ body {
 	}
 	100% {
 		transform: scaleX(1);
+	}
+}
+
+@keyframes pokemon-fidget {
+	92% {
+		transform: translateY(0);
+	}
+	94% {
+		transform: translateY(-1rem);
+	}
+	96% {
+		transform: translateY(0);
+	}
+	98% {
+		transform: translateY(-1rem);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }
