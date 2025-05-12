@@ -60,6 +60,7 @@ ButtonCoupon0.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon0.value = '';
 });
 
 ButtonCoupon1.addEventListener("click", (event) => {
@@ -83,6 +84,7 @@ ButtonCoupon1.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon1.value = '';
 });
 
 ButtonCoupon2.addEventListener("click", (event) => {
@@ -106,6 +108,7 @@ ButtonCoupon2.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon2.value = '';
 });
 
 ButtonCoupon3.addEventListener("click", (event) => {
@@ -129,6 +132,7 @@ ButtonCoupon3.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon3.value = '';
 });
 
 ButtonCoupon4.addEventListener("click", (event) => {
@@ -152,6 +156,7 @@ ButtonCoupon4.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon4.value = '';
 });
 
 ButtonCoupon5.addEventListener("click", (event) => {
@@ -175,6 +180,7 @@ ButtonCoupon5.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon5.value = '';
 });
 
 ButtonCoupon6.addEventListener("click", (event) => {
@@ -198,6 +204,7 @@ ButtonCoupon6.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon6.value = '';
 });
 
 ButtonCoupon7.addEventListener("click", (event) => {
@@ -221,6 +228,7 @@ ButtonCoupon7.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon7.value = '';
 });
 
 ButtonCoupon8.addEventListener("click", (event) => {
@@ -244,6 +252,7 @@ ButtonCoupon8.addEventListener("click", (event) => {
 			CouponAccepted = 0;
 		}
 	}
+	InputCoupon8.value = '';
 });
 
 ButtonBuy0.addEventListener("click", (event) => {
