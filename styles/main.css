@@ -139,13 +139,21 @@ li {
 
 /* || Animations */
 @keyframes kirby-slide {
-	from {
+	0% {
+		top:0;
 		left: 0;
+		height: 7rem;
+		width: 7rem;
+	}
+	50% {
+		top: 1rem;
+		left: 5rem;
 		height: 8rem;
 		width: 8rem;
 	}
-	to {
-		left: 8rem;
+	100% {
+		top: 4rem;
+		left: 20rem;
 		height: 2rem;
 		width: 2rem;
 	}
