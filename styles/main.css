@@ -41,120 +41,237 @@
 
 /* || Global Variables */
 
+:root,
+[data-bs-theme=light] {
+	--bs-primary: #dc3545;
+	--bs-primary-rgb: 220, 53, 69;
+	--bs-primary-text-emphasis: #58151c;
+	--bs-primary-bg-subtle: #f8d7da;
+	--bs-primary-border-subtle: #f1aeb5;
+	--bs-link-color: #dc3545;
+	--bs-link-color-rgb: 220, 53, 69;
+	--bs-link-hover-color: #b02a37;
+	--bs-link-hover-color-rgb: 176, 42, 55;
+	--black-white: #ffffff;
+	--black-white-invert: #000000;
+}
+
+[data-bs-theme=dark] {
+	color-scheme: dark;
+	--bs-primary-text-emphasis: #ea868f;
+	--bs-primary-bg-subtle: #2c0b0e;
+	--bs-primary-border-subtle: #842029;
+	--bs-link-color: #ea868f;
+	--bs-link-hover-color: #f5bfc4;
+	--bs-link-color-rgb: 234, 134, 143;
+	--bs-link-hover-color-rgb: 245, 191, 196;
+	--black-white: #000000;
+	--black-white-invert: #ffffff;
+}
+
+.btn-primary {
+	--bs-btn-bg: #dc3545;
+	--bs-btn-border-color: #dc3545;
+	--bs-btn-hover-bg: #b52b38;
+	--bs-btn-hover-border-color: #b02a37;
+	--bs-btn-focus-shadow-rgb: 227, 93, 106;
+	--bs-btn-active-bg: #b02a37;
+	--bs-btn-disabled-bg: #dc3545;
+	--bs-btn-disabled-border-color: #dc3545;
+}
+
+/* || Base */
+
 body {
 	overflow-x: hidden;
 	max-width: 100vw;
-	min-height: 100vh;
-}
-
-header {
-	text-align: center;
-}
-
-main {
-	border-top: thin solid #000000;
-	border-bottom: thin solid #000000;
-}
-
-li {
-	margin: 1rem 0 1rem 0;
-	font-size: 2rem;
 }
 
 /* || Layout */
 
-.l-container-main {
-	max-width: min(80vw + 4rem, 1440px);
-	margin: 0 auto;
+.l-w-fit-content {
+	width: fit-content;
 }
 
-.l-row-min-blue {
-	min-height: 4rem;
-	border-top: thin solid red;
-	border-bottom: thin solid red;
-	background-color: blue;
-	color: red;
-	text-align: center;
+.l-h-6rem {
+	height: 6rem;
 }
 
-.l-flex {
-	display: flex;
-	justify-content: space-around;
+.l-h-9rem {
+	height: 9rem;
 }
-
 
 /* || Module */
 
-#big-button {
-	display: block;
-	margin: 0 auto;
-}
-
-#small-button {
-	display: block;
-	margin: 0 auto;
+.box-image-card {
+	background-image: linear-gradient(var(--black-white), var(--bs-primary-bg-subtle)) !important;
 }
 
 /* || State */
 
-#modal:target {
-	display: block;
-}
-
 /* || Theme */
 
-.image-common {
-	height: 8rem;
-	width: 8rem;
+.background-color-normal-type {
+	background-color: #9FA19F;
 }
 
-#kirby {
-	position: relative;
-	left: 0;
-	animation: 2s ease-in-out 0s infinite alternate backwards running kirby-slide;
+.background-color-fighting-type {
+	background-color: #FF8000;
 }
 
-.owo-box {
-	height: 16rem;
-	width: 10rem;
-	background-color: red;
+.background-color-flying-type {
+	background-color: #81B9EF;
 }
 
-.owo-box:hover {
-	background-color: green;
+.background-color-poison-type {
+	background-color: #9141CB;
 }
 
-#modal {
-	position: absolute;
-	display: none;
-	top: 0;
+.background-color-ground-type {
+	background-color: #915121;
+}
+
+.background-color-rock-type {
+	background-color: #AFA981;
+}
+
+.background-color-bug-type {
+	background-color: #91A119;
+}
+
+.background-color-ghost-type {
+	background-color: #704170;
+}
+
+.background-color-steel-type {
+	background-color: #60A1B8;
+}
+
+.background-color-fire-type {
+	background-color: #E62829;
+}
+
+.background-color-water-type {
+	background-color: #2980EF;
+}
+
+.background-color-grass-type {
+	background-color: #3FA129;
+}
+
+.background-color-electric-type {
+	background-color: #FAC000;
+}
+
+.background-color-psychic-type {
+	background-color: #EF4179;
+}
+
+.background-color-ice-type {
+	background-color: #3DCEF3;
+}
+
+.background-color-dragon-type {
+	background-color: #5060E1;
+}
+
+.background-color-dark-type {
+	background-color: #624D4E;
+}
+
+.background-color-fairy-type {
+	background-color: #EF70EF;
+}
+
+.height-4rem {
+	height: 4rem;
+}
+
+#image-female-grunt {
+	position: fixed;
+	z-index: -1;
+	top: 4rem;
 	right: 0;
 	bottom: 0;
-	left: 0;
-	height: 16rem;
-	width: 32rem;
-	border: thin solid black;
-	background-color: gray;
+	height: 100vh;
+	width: auto;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	opacity: 0.125;
+	image-rendering: pixelated;
+	animation: 30s linear 0s infinite normal none running grunt-slide,
+	           30s step-end 0s infinite normal none running grunt-flip;
+}
+
+#image-team-rocket-logo {
+	height: 4rem;
+	width: auto;
+}
+
+.image-pokedollar {
+	display: inline-block;
+	height: 1rem;
+	width: 0.5rem;
+	image-rendering: pixelated;
+}
+
+.text-black-white-invert {
+	color: var(--black-white-invert);
+}
+
+.image-card {
+	height: 12rem;
+	width: auto;
+	image-rendering: pixelated;
+	animation: 3s step-end 0s infinite normal none running pokemon-fidget;
+}
+
+.text-coupon-accepted,
+.text-coupon-denied,
+.text-coupon-used {
+	display: none;
 }
 
 /* || Animations */
-@keyframes kirby-slide {
+
+@keyframes grunt-slide {
 	0% {
-		top:0;
-		left: 0;
-		height: 7rem;
-		width: 7rem;
+		right: -75vh;
 	}
 	50% {
-		top: 1rem;
-		left: 5rem;
-		height: 8rem;
-		width: 8rem;
+		right: 100vw;
 	}
 	100% {
-		top: 4rem;
-		left: 20rem;
-		height: 2rem;
-		width: 2rem;
+		right: -75vh;
+	}
+}
+
+@keyframes grunt-flip {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(-1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes pokemon-fidget {
+	92% {
+		transform: translateY(0);
+	}
+	94% {
+		transform: translateY(-1rem);
+	}
+	96% {
+		transform: translateY(0);
+	}
+	98% {
+		transform: translateY(-1rem);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }
