@@ -295,6 +295,10 @@ td {
 	border: thin solid var(--border-primary);
 }
 
+th {
+	font-weight: normal;
+}
+
 .box-header-bar {
 	display: flex;
 	justify-content: space-between;
